@@ -1,6 +1,7 @@
 require('rspec')
 require('contact')
 require ('phone')
+require ('email')
 
 describe(Contact) do
 
@@ -59,6 +60,15 @@ describe(Contact) do
       test_phone = Phone.new({:area_code => 852, :number => 23456789, :type => "home"})
       @test_contact.add_phone(test_phone)
       expect(@test_contact.phones()).to(eq([test_phone]))
+    end
+  end
+
+  describe("#add_email") do
+    it("adds a new email to a contact") do
+      @test_contact
+      test_email = Email.new({:address=>"jeffrey.li@cantab.net", :type=> "personal"})
+      @test_contact.add_email(test_email)
+      expect(@test_contact.emails()).to(eq([test_email]))
     end
   end
 
