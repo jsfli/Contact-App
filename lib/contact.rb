@@ -46,4 +46,8 @@ class Contact
     @emails.push(email)
   end
 
+  define_method(:add_address) do |address|
+    @addresses.push(address)
+  end
+
 end #end of Contact class
