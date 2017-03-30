@@ -1,0 +1,55 @@
+<h3>Contact details of <%= @contact.first_name()%> <%= @contact.last_name()%></h3>
+
+<hr>
+
+<div>
+  <h4>Personal Details:</h4>
+  <p><b>First Name:</b> <%= @contact.first_name()%></p>
+  <p><b>Last Name:</b> <%= @contact.last_name()%></p>
+  <p><b>Company:</b> <%= @contact.company()%></p>
+  <p><b>Job Title:</b> <%= @contact.job_title()%></p>
+  <a href="/contacts" class="btn btn-success">Return to the list of contacts</a>
+</div>
+
+<hr>
+
+<div>
+  <h4> List of contact numbers: </h4>
+    <ul>
+      <%@contact.phones().each() do |phone|%>
+        <p><b>Type:</b> <%=phone.type()%> </p>
+        <p><b>Area code:</b> <%=phone.area_code()%> <b>Number:</b> <%=phone.number()%></p>
+      <%end%>
+    </ul>
+  <a href="/contacts/<%= @contact.id() %>/phones/new" class="btn btn-primary">Add a new number</a>
+</div>
+
+<hr>
+
+<div>
+  <h4> List of emails: </h4>
+    <ul>
+      <%@contact.emails().each() do |email|%>
+        <p><b>Type:</b> <%=email.type()%></p>
+        <p><b>Email:</b> <%=email.address()%></p>
+      <%end%>
+    </ul>
+  <a href="/contacts/<%= @contact.id() %>/emails/new" class="btn btn-danger">Add a new email</a>
+</div>
+
+<hr>
+
+<div>
+  <h4> List of Addresses: </h4>
+    <ul>
+      <%@contact.addresses().each() do |address|%>
+        <p><b>Type: </b> <%=address.type()%></p>
+        <p><b>Street: </b> <%=address.street()%></p>
+        <p><b>City: </b> <%=address.city()%></p>
+        <p><b>State: </b> <%=address.state()%></p>
+        <p><b>Zip: </b> <%=address.zip()%></p>
+        <p><b>Country: </b> <%=address.country()%></p>
+      <%end%>
+    </ul>
+  <a href="/contacts/<%= @contact.id() %>/addresses/new" class="btn btn-warning">Add a new address</a>
+</div>

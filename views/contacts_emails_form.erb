@@ -1,0 +1,22 @@
+<h3>Add a email to <%=@contact.first_name()%> <%=@contact.last_name()%></h3>
+
+<form action="/email" method="post">
+  <!-- type hidden value auto input, watch out for that, can leverage on previous artist form -->
+  <input id="contact_id" type="hidden" name="contact_id"
+  value="<%= @contact.id()%>" class"form-control">
+
+  <div class="form-group">
+    <label for="address">Email:</label>
+    <input id="address" name="address" type="text" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="type">Type:</label>
+      <select id="type" name="type" type="text" class="form-control">
+        <option value="work">work</option>
+        <option value="personal">personal</option>
+      </select>
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Email</button>
+</form>

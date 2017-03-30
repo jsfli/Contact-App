@@ -1,0 +1,12 @@
+<h1>List of Contacts</h1>
+
+<ul>
+  <% @contacts.each() do |contact| %>
+    <li><a href="/contacts/<%=contact.id()%>"><%=contact.first_name()%> <%=contact.last_name()%></li>
+  <%end%>
+</ul>
+
+<div>
+  <a href="/" class="btn btn-primary">Home</a>
+  <a href="/contacts/new" class="btn btn-success">Add New Contact</a>
+</div>
